@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     
+    @IBOutlet weak var twoPeople: UILabel!
+    @IBOutlet weak var threePeople: UILabel!
+    @IBOutlet weak var fourPeople: UILabel!
     @IBOutlet weak var billField: UITextField!
     
     //@IBOutlet weak var tipControl: UISegmentedControl!
@@ -54,9 +57,15 @@ class ViewController: UIViewController {
     //    let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let tip = bill * tipPercentages[tpIndex]
         let total = bill + tip
+        let twoParts = total/2
+        let threeParts = total/3
+        let fourParts = total/4
         
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+        twoPeople.text = String(format: "$%.2f",twoParts)
+        threePeople.text = String(format: "$%.2f",threeParts)
+        fourPeople.text = String(format: "$%.2f",fourParts)
         
     }
 }
