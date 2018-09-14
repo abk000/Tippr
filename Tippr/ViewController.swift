@@ -15,11 +15,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var billField: UITextField!
     
-    @IBOutlet weak var tipControl: UISegmentedControl!
+    //@IBOutlet weak var tipControl: UISegmentedControl!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        billField.becomeFirstResponder()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -37,6 +40,10 @@ class ViewController: UIViewController {
     
     
     @IBAction func calculateTip(_ sender: AnyObject) {
+        
+        self.billField.alpha = 0.8
+        
+        UIView.animate(withDuration: 0.2, animations: {self.billField.alpha = 1})
         
         let tipPercentages = [0.18, 0.2, 0.25]
         let defaults = UserDefaults.standard

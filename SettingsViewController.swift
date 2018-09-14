@@ -9,7 +9,6 @@
 import UIKit
 
 class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    @IBOutlet weak var colorTheme: UISegmentedControl!
     @IBOutlet weak var defaultPercent: UIPickerView!
     
     let percents = ["18%", "20%", "25%"]
@@ -33,17 +32,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         defaults.set(index, forKey: "tipCalcIndex")
         defaults.synchronize()
     }
-    
-    
-   //     func setDefault(){
-     //       let defaults = UserDefaults.standard
-            
-       //     defaults.set(defaultPercent.selectedRow(inComponent: 1), forKey: "tipCalcIndex")
-            
-         //   defaults.synchronize()
-        
-            
-        //}
     
     override func viewDidLoad() {
         super.viewDidLoad()
