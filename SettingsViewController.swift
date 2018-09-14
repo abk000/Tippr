@@ -49,6 +49,11 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         super.viewDidLoad()
         self.title = "Settings"
         
+        let defaults1 = UserDefaults.standard
+        let defIndex = defaults1.integer(forKey: "tipCalcIndex")
+        
+        defaultPercent.selectRow(defIndex, inComponent: 0, animated: true)
+        
         // Do any additional setup after loading the view.
     }
 
