@@ -8,14 +8,47 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var colorTheme: UISegmentedControl!
-    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var defaultPercent: UIPickerView!
+    
+    let percents = ["18%", "20%", "25%"]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return percents[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return percents.count
+    }
+    
+    @IBAction func saveChanges(_ sender: AnyObject) {
+        let defaults = UserDefaults.standard
+        let index =
+            defaultPercent.selectedRow(inComponent: 0)
+        defaults.set(index, forKey: "tipCalcIndex")
+        defaults.synchronize()
+    }
+    
+    
+   //     func setDefault(){
+     //       let defaults = UserDefaults.standard
+            
+       //     defaults.set(defaultPercent.selectedRow(inComponent: 1), forKey: "tipCalcIndex")
+            
+         //   defaults.synchronize()
+        
+            
+        //}
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.title = "Settings"
+        
         // Do any additional setup after loading the view.
     }
 

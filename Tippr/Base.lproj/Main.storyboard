@@ -151,9 +151,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" misplaced="YES" id="dFb-tC-QAn">
-                                <rect key="frame" x="46" y="260" width="297" height="147"/>
+                                <rect key="frame" x="39" y="260" width="297" height="147"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Dyt-s8-zzm" id="YCb-HQ-xiB"/>
+                                    <outlet property="delegate" destination="Dyt-s8-zzm" id="eLK-bY-bM3"/>
+                                </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0hE-qm-PmN">
+                                <rect key="frame" x="124" y="415" width="143" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveChanges:" destination="Dyt-s8-zzm" eventType="touchUpInside" id="7IP-Ps-Gc0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -161,6 +177,7 @@
                     <navigationItem key="navigationItem" id="SU5-Zh-gfZ"/>
                     <connections>
                         <outlet property="colorTheme" destination="gwz-TS-lhb" id="w8K-hf-4YI"/>
+                        <outlet property="defaultPercent" destination="dFb-tC-QAn" id="pj3-4q-Nhe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WfH-fg-d5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
